@@ -37,7 +37,7 @@ export async function memoriesRoutes(app: FastifyInstance) {
       },
     })
 
-    if (!memory.isPublic && memory.id !== req.user.sub) {
+    if (!memory.isPublic && memory.userId !== req.user.sub) {
       return rep.status(401).send()
     }
 
